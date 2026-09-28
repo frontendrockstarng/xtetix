@@ -54,6 +54,24 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+// Validate ../../src/app/hseq-policy/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/hseq-policy">> = Specific
+  const handler = {} as typeof import("../../src/app/hseq-policy/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/local-content/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/local-content">> = Specific
+  const handler = {} as typeof import("../../src/app/local-content/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/">> = Specific

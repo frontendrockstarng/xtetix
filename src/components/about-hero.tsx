@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import { PageHeroIntro } from "@/components/page-hero-intro";
 
 const STATIC_LAYOUT_QUERY = "(max-width: 760px), (prefers-reduced-motion: reduce)";
 
@@ -61,25 +62,12 @@ export function AboutHero() {
   }, []);
 
   return (
-    <section className="about-hero" aria-labelledby="about-hero-title">
-      <div className="about-hero__intro page-width">
-        <h1
-          id="about-hero-title"
-          className="about-hero__title"
-          aria-label="Experience. Capability. Excellence."
-        >
-          {["Experience. Capability.", "Excellence."].map((line) => (
-            <span className="about-hero__line" key={line} aria-hidden="true">
-              <span>{line}</span>
-            </span>
-          ))}
-        </h1>
-        <p className="about-hero__summary">
-          Established in 2012, the company has built a reputation for delivering safe,
-          reliable, and cost-effective solutions that support critical infrastructure,
-          operational facilities, and project execution environments.
-        </p>
-      </div>
+    <section className="page-hero" aria-labelledby="about-hero-title">
+      <PageHeroIntro
+        id="about-hero-title"
+        lines={["Experience. Capability.", "Excellence."]}
+        summary="Established in 2012, the company has built a reputation for delivering safe, reliable, and cost-effective solutions that support critical infrastructure, operational facilities, and project execution environments."
+      />
 
       <div className="about-reveal" ref={trackRef}>
         <div className="about-reveal__stage page-width" ref={stageRef}>

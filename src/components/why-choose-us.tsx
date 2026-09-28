@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, type CSSProperties } from "react";
+import { CardEdges } from "@/components/card-edges";
 import { ScrollRevealHeading } from "@/components/scroll-reveal-heading";
 
 const reasons = [
@@ -96,10 +97,7 @@ export function WhyChooseUs() {
               key={reason.title}
               style={{ "--card-delay": `${index * 120}ms` } as CSSProperties}
             >
-              <span className="why-card__edge why-card__edge--top" aria-hidden="true" />
-              <span className="why-card__edge why-card__edge--right" aria-hidden="true" />
-              <span className="why-card__edge why-card__edge--bottom" aria-hidden="true" />
-              <span className="why-card__edge why-card__edge--left" aria-hidden="true" />
+              <CardEdges />
               <span className="why-card__index" aria-hidden="true">
                 {index + 1}
               </span>

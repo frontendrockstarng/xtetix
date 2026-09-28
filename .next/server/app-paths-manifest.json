@@ -1,5 +1,7 @@
 {
   "/page": "app/page.js",
   "/[slug]/page": "app/[slug]/page.js",
-  "/about-us/page": "app/about-us/page.js"
+  "/about-us/page": "app/about-us/page.js",
+  "/hseq-policy/page": "app/hseq-policy/page.js",
+  "/local-content/page": "app/local-content/page.js"
 }

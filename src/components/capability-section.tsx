@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState } from "react";
 import { RolloverText } from "@/components/rollover-text";
+import { VerticalSlider } from "@/components/vertical-slider";
 
 const capabilities = [
   "Skills Acquisition",
@@ -15,7 +16,6 @@ const capabilities = [
 export function CapabilitySection() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -44,18 +44,6 @@ export function CapabilitySection() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (!isVisible || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
-    }
-
-    const interval = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % capabilities.length);
-    }, 3000);
-
-    return () => window.clearInterval(interval);
-  }, [isVisible]);
-
   return (
     <section
       className="capability-section"
@@ -71,27 +59,13 @@ export function CapabilitySection() {
           </p>
         </div>
 
-        <div className="capability-slider" aria-label="Our capability priorities">
-          <div
-            className="capability-slider__track"
-            aria-hidden="true"
-            style={{
-              transform: `translateY(calc((-4 - ${activeIndex}) * var(--capability-item-height)))`,
-            } as CSSProperties}
-          >
-            {[...capabilities, ...capabilities, ...capabilities].map((capability, index) => (
-              <span
-                className={`capability-slider__item${index === capabilities.length + activeIndex ? " is-active" : ""}`}
-                key={`${capability}-${index}`}
-              >
-                {capability}
-              </span>
-            ))}
-          </div>
-          <span className="sr-only">
-            {capabilities.join(", ")}
-          </span>
-        </div>
+        <VerticalSlider
+          items={capabilities}
+          label="Our capability priorities"
+          playing={isVisible}
+          className="capability-slider"
+          itemClassName="capability-slider__item"
+        />
 
         <div className="capability-section__content">
           <p className="capability-section__description">
