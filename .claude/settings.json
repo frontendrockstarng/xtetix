@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/User/AppData/Local/Temp/claude/c--Users-User-OneDrive-Documents-Projects-xterix/a5f87048-6148-4606-b2bf-f4e4919ebca5/scratchpad/**)",
+      "Bash(node shot.js)",
+      "Bash(node -e ' *)",
+      "Bash(node story.js)",
+      "PowerShell($p = \"src\\\\app\\\\globals.css\"; $c = [IO.File]::ReadAllText\\($p\\); $c = $c.Replace\\(\".about-story__statement\", \".scroll-fill\"\\).Replace\\(\".about-story__word\", \".scroll-fill__word\"\\); [IO.File]::WriteAllText\\($p, $c, \\(New-Object Text.UTF8Encoding $false\\)\\); \\(Select-String -Path $p -Pattern \"scroll-fill\" | Measure-Object\\).Count)"
+    ]
+  }
+}

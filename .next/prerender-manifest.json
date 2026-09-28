@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "ee6f50bee8f208b6fcb78ba6c16c9cd8",
-    "previewModeSigningKey": "d4098ac2e5192b43705d6bc26893a056a476091bd057a9a2347616ed71053968",
-    "previewModeEncryptionKey": "0af4b2792aa8a0b5a82d383b8bb0c274a209dc81a8c8a6537cda80cca3b0c55d"
-  }
-}
+{"version":4,"routes":{"/about-us":{},"/hseq-policy":{},"/local-content":{},"/services":{},"/projects":{},"/gallery":{},"/contact":{}},"dynamicRoutes":{"/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/[slug]","routeRegex":"^\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"22aebd2d0727f120c92b4445d5f55244","previewModeSigningKey":"df527427eccc210608568b88c2901e3602466467dc658f2e14b71afd7da7520d","previewModeEncryptionKey":"77d9a910884177e9a0f9fdb3808b96d3fee1145b82d7fb9fa496304104a510d9"}}

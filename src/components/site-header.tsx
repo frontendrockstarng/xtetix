@@ -1,9 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import { NavChevron, NavDropdown } from "@/components/nav-dropdown";
 import { RolloverText } from "@/components/rollover-text";
 
+const companyLinks = [
+  { href: "/about-us", label: "About us" },
+  { href: "/hseq-policy", label: "HSEQ policy" },
+  { href: "/local-content", label: "Local content" },
+];
+
 const links = [
-  { href: "/company", label: "Company" },
   { href: "/services", label: "Services" },
   { href: "/projects", label: "Projects" },
   { href: "/gallery", label: "Gallery" },
@@ -33,6 +39,19 @@ export function SiteHeader() {
             <span />
           </summary>
           <nav className="site-nav" aria-label="Main navigation">
+            <details className="mobile-nav__group">
+              <summary className="mobile-nav__group-toggle">
+                Company
+                <NavChevron />
+              </summary>
+              <div className="mobile-nav__submenu">
+                {companyLinks.map((link) => (
+                  <Link key={link.href} href={link.href}>
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </details>
             {links.map((link) => (
               <Link key={link.href} href={link.href}>
                 <RolloverText>{link.label}</RolloverText>
@@ -45,6 +64,7 @@ export function SiteHeader() {
         </details>
 
         <nav className="site-nav site-nav--desktop" aria-label="Main navigation">
+          <NavDropdown label="Company" items={companyLinks} />
           {links.map((link) => (
             <Link key={link.href} href={link.href}>
               <RolloverText>{link.label}</RolloverText>

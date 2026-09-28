@@ -2,9 +2,13 @@ import { notFound } from "next/navigation";
 import { PlaceholderPage } from "@/components/placeholder-page";
 
 const pages: Record<string, { title: string; intro: string }> = {
-  company: {
-    title: "Company",
-    intro: "Built to support critical operations across major industries.",
+  "hseq-policy": {
+    title: "HSEQ policy",
+    intro: "Our commitment to health, safety, security, environment and quality on every project.",
+  },
+  "local-content": {
+    title: "Local content",
+    intro: "Developing Nigerian capacity, people and suppliers through the work we deliver.",
   },
   services: {
     title: "Services",

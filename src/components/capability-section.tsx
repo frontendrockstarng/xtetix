@@ -99,7 +99,7 @@ export function CapabilitySection() {
             development, local supplier participation, knowledge transfer and
             sustainable economic value creation.
           </p>
-          <Link className="button button--outline capability-section__cta" href="/company">
+          <Link className="button button--outline capability-section__cta" href="/local-content">
             <RolloverText>Our local content commitment</RolloverText>
           </Link>
         </div>

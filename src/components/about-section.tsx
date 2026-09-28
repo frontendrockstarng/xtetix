@@ -144,7 +144,7 @@ export function AboutSection() {
           </p>
           <Link
             className="button button--primary about-section__cta"
-            href="/company"
+            href="/about-us"
             data-about-reveal
           >
             <RolloverText>Read more</RolloverText>

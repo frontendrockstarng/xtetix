@@ -86,7 +86,7 @@ export function SafetyAssuranceSection() {
         </p>
         <Link
           className="button button--primary safety-assurance__cta"
-          href="/company"
+          href="/hseq-policy"
           data-safety-reveal
         >
           <RolloverText>See how we prioritize safety</RolloverText>

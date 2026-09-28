@@ -33,9 +33,9 @@ export function SiteFooter() {
         <div className="site-footer__columns">
           <div className="site-footer__column site-footer__column--company">
             <h3>Company</h3>
-            <Link href="/company"><RolloverText>About us</RolloverText></Link>
-            <Link href="/company"><RolloverText>HSEQ</RolloverText></Link>
-            <Link href="/company"><RolloverText>Local content</RolloverText></Link>
+            <Link href="/about-us"><RolloverText>About us</RolloverText></Link>
+            <Link href="/hseq-policy"><RolloverText>HSEQ policy</RolloverText></Link>
+            <Link href="/local-content"><RolloverText>Local content</RolloverText></Link>
           </div>
 
           <div className="site-footer__column site-footer__column--links">
