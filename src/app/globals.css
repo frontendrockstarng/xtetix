@@ -1976,6 +1976,7 @@ width: 100%;
 @media (max-width: 420px) {
   .hero h1 {
     font-size: clamp(1.7rem, 8vw, 2.2rem);
+    letter-spacing: -0.7px;
   }
 
   .hero__summary {
@@ -1984,12 +1985,6 @@ width: 100%;
 
   .client-trust__heading h2 {
     font-size: 1.1rem;
-  }
-
-  .hero__actions {
-    align-items: stretch;
-    flex-direction: column;
-    max-width: 15rem;
   }
 
   .hero__scroll {
@@ -2204,6 +2199,7 @@ width: 100%;
 
   .hero h1 {
     font-size: clamp(1.65rem, 7vw, 2rem);
+    letter-spacing: -0.7px;
   }
 
   .hero__summary {
@@ -2288,6 +2284,7 @@ width: 100%;
 
   .hero h1 {
     font-size: 1.55rem;
+    letter-spacing: -0.7px;
   }
 
   .hero__summary {
@@ -3563,5 +3560,68 @@ width: 100%;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Hide the native play overlay iOS shows when autoplay is blocked. */
+.hero__video::-webkit-media-controls,
+.hero__video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+/*
+ * Mobile readability + full-width buttons.
+ * Kept last so it overrides the per-breakpoint sizes above; body copy never
+ * drops below ~15px on phones.
+ */
+@media (max-width: 760px) {
+  .hero__summary,
+  .services-section__intro,
+  .service-item__description,
+  .why-choose__subheading,
+  .projects-section__heading > p,
+  .about-section__description,
+  .about-section__closing-copy,
+  .safety-assurance__copy,
+  .capability-section__description,
+  .placeholder-page > p:not(.eyebrow) {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .why-card p,
+  .project-card__copy p,
+  .site-footer__column a,
+  .site-footer__column p {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  .eyebrow,
+  .about-section__metric-label {
+    font-size: 0.8125rem;
+  }
+
+  .site-footer__copyright {
+    font-size: 0.75rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button,
+  .service-item__link,
+  .project-card__button,
+  .about-section__cta,
+  .capability-section__cta,
+  .contact-invite__button,
+  .safety-assurance__cta {
+    width: 100%;
+    min-height: 48px;
+    padding: 0.85rem 1rem;
+    font-size: 0.9375rem;
   }
 }

@@ -8,22 +8,13 @@ import { ProjectsSection } from "@/components/projects-section";
 import { SafetyAssuranceSection } from "@/components/safety-assurance-section";
 import { CapabilitySection } from "@/components/capability-section";
 import { ContactInviteSection } from "@/components/contact-invite-section";
+import { HeroVideo } from "@/components/hero-video";
 
 export default function HomePage() {
   return (
     <main>
       <section className="hero" aria-labelledby="hero-title">
-        <video
-          className="hero__video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          aria-hidden="true"
-        >
-          <source src="https://res.cloudinary.com/colt-copy/video/upload/v1790454395/xtx-herovid_dq9yxk.mp4" type="video/mp4" />
-        </video>
+        <HeroVideo />
         <div className="hero__scrim" aria-hidden="true" />
         <div className="hero__content page-width">
           <h1
