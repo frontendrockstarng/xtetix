@@ -3607,6 +3607,32 @@ width: 100%;
     font-size: 0.75rem;
   }
 
+  .hero h1,
+  .client-trust__heading h2,
+  .about-section__story h2,
+  .services-section__sticky h2,
+  .why-choose__heading h2,
+  .projects-section__heading h2,
+  .safety-assurance__title,
+  .capability-section__lead-title,
+  .contact-invite__title,
+  .placeholder-page h1,
+  .site-footer__column h3,
+  .service-item__mobile-title,
+  .why-card h3,
+  .project-card__copy h3 {
+    letter-spacing: -0.7px;
+  }
+
+  .service-item__mobile-title {
+    font-size: 1.375rem;
+  }
+
+  .why-card h3,
+  .project-card__copy h3 {
+    font-size: 1.125rem;
+  }
+
   .hero__actions {
     flex-direction: column;
     align-items: stretch;

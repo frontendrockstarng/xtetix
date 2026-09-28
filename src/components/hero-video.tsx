@@ -2,8 +2,13 @@
 
 import { useEffect, useRef } from "react";
 
-const VIDEO_SRC =
-  "https://res.cloudinary.com/colt-copy/video/upload/v1790454395/xtx-herovid_dq9yxk.mp4";
+// Cloudinary re-encodes these as H.264, no audio track, with the moov atom at
+// the start ("faststart"), so playback can begin before the whole file loads.
+// The original upload (39.5 MB, moov at the end) can't autoplay on mobile.
+const VIDEO_BASE = "https://res.cloudinary.com/colt-copy/video/upload";
+const VIDEO_PATH = "v1790454395/xtx-herovid_dq9yxk.mp4";
+const MOBILE_VIDEO_SRC = `${VIDEO_BASE}/w_960,q_auto:eco,vc_h264,ac_none/${VIDEO_PATH}`;
+const DESKTOP_VIDEO_SRC = `${VIDEO_BASE}/w_1280,q_auto,vc_h264,ac_none/${VIDEO_PATH}`;
 const POSTER_SRC =
   "https://res.cloudinary.com/colt-copy/video/upload/so_0/v1790454395/xtx-herovid_dq9yxk.jpg";
 
@@ -37,7 +42,8 @@ export function HeroVideo() {
       aria-hidden="true"
       tabIndex={-1}
     >
-      <source src={VIDEO_SRC} type="video/mp4" />
+      <source src={MOBILE_VIDEO_SRC} type="video/mp4" media="(max-width: 760px)" />
+      <source src={DESKTOP_VIDEO_SRC} type="video/mp4" />
     </video>
   );
 }
