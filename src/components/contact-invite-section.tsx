@@ -109,7 +109,7 @@ export function ContactInviteSection() {
           className="contact-invite__title"
           lines={["Tell us about your project,", "operational requirement or", "service need."]}
         />
-        <Link className="button button--primary contact-invite__button" href="/contact">
+        <Link className="button button--primary contact-invite__button" href="#contact">
           <RolloverText>Contact us for your project</RolloverText>
         </Link>
       </div>

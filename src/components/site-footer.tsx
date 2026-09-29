@@ -3,7 +3,7 @@ import { RolloverText } from "@/components/rollover-text";
 
 export function SiteFooter() {
   return (
-    <footer className="site-footer">
+    <footer className="site-footer" id="contact">
       <div className="site-footer__inner page-width">
         <div className="site-footer__top">
           <Link className="site-footer__brand" href="/" aria-label="XTETIX Concepts Ltd home">
@@ -41,9 +41,7 @@ export function SiteFooter() {
           <div className="site-footer__column site-footer__column--links">
             <h3>Links</h3>
             <Link href="/services"><RolloverText>Services</RolloverText></Link>
-            <Link href="/projects"><RolloverText>Projects</RolloverText></Link>
-            <Link href="/gallery"><RolloverText>Gallery</RolloverText></Link>
-          </div>
+            <Link href="/projects"><RolloverText>Projects</RolloverText></Link>          </div>
 
           <div className="site-footer__column site-footer__column--contact">
             <h3>Contact</h3>

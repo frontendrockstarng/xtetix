@@ -37,7 +37,7 @@ export default function HomePage() {
             </span>
           </p>
           <div className="hero__actions">
-            <Link className="button button--primary" href="/contact">
+            <Link className="button button--primary" href="#contact">
               <RolloverText>Get a quote</RolloverText>
             </Link>
             <Link className="button button--outline" href="/services">

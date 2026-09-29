@@ -270,11 +270,30 @@ width: 100%;
   box-shadow: 0 1px 0 rgba(21, 21, 21, 0.06);
 }
 
+/* "Contact us" buttons jump here; keep it clear of the sticky header. */
+#contact {
+  scroll-margin-top: 76px;
+}
+
+@media (max-width: 760px) {
+  #contact {
+    scroll-margin-top: 68px;
+  }
+}
+
 .site-header__inner {
-  display: flex;
+  display: grid;
   min-height: 76px;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
+}
+
+.site-header__inner > .brand {
+  justify-self: start;
+}
+
+.site-nav__cta {
+  justify-self: end;
 }
 
 .brand {
@@ -310,7 +329,8 @@ width: 100%;
   transition: color 180ms ease;
 }
 
-.site-nav a:not(.button):hover {
+.site-nav a:not(.button):hover,
+.site-nav a:not(.button)[aria-current="page"] {
   color: var(--color-burgundy);
 }
 
@@ -468,6 +488,10 @@ width: 100%;
   display: block;
   padding-left: 1rem;
   color: var(--color-gray);
+}
+
+.mobile-nav .site-nav .mobile-nav__submenu a[aria-current="page"] {
+  color: var(--color-burgundy);
 }
 
 .hero {
@@ -1917,7 +1941,13 @@ width: 100%;
     font-size: 0.64rem;
   }
 
-  .site-nav--desktop {
+  .site-header__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .site-nav--desktop,
+  .site-nav__cta {
     display: none;
   }
 
@@ -4854,6 +4884,308 @@ width: 100%;
   }
 }
 
+/* Project showcase (projects page) */
+.project-showcase {
+  padding-block: clamp(4rem, 5.5vw, 5rem) clamp(3.5rem, 4.5vw, 4rem);
+}
+
+.project-showcase--light {
+  background: var(--color-offwhite);
+}
+
+.project-showcase--white {
+  background: var(--color-white);
+}
+
+.project-showcase__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 468fr) minmax(0, 692fr);
+  gap: clamp(2rem, 3vw, 2.5rem);
+  align-items: start;
+}
+
+.project-showcase__title {
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+
+.project-showcase__summary {
+  margin: 1.25rem 0 0;
+  color: var(--color-gray);
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  line-height: 1.55;
+  letter-spacing: -0.2px;
+}
+
+.project-showcase__stage {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 692 / 411;
+  touch-action: pan-y;
+}
+
+.project-showcase__slides {
+  position: absolute;
+  inset: 0;
+  background: rgba(21, 21, 21, 0.06);
+}
+
+.project-showcase__slide {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+}
+
+.project-showcase__slide img {
+  object-fit: cover;
+}
+
+.project-showcase__slide.is-previous {
+  z-index: 1;
+  visibility: visible;
+}
+
+.project-showcase__slide.is-active {
+  z-index: 2;
+  visibility: visible;
+}
+
+.project-showcase__slide.is-entering {
+  animation: showcase-slide-wipe 1000ms cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+.project-showcase__slide.is-entering img {
+  animation: showcase-slide-settle 1600ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.project-showcase__slide.is-previous img {
+  animation: showcase-slide-recede 1000ms cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+.project-showcase__thumbs {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-bottom: 0.75rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.project-showcase__thumbs::-webkit-scrollbar {
+  display: none;
+}
+
+.project-showcase__thumb {
+  position: relative;
+  flex: 0 0 auto;
+  width: 5rem;
+  height: 5rem;
+  padding: 0;
+  border: 0;
+  background: var(--color-white);
+  cursor: pointer;
+  box-shadow: inset 0 0 0 4px var(--color-white);
+  transition: box-shadow 250ms ease;
+}
+
+.project-showcase--white .project-showcase__thumb {
+  outline: 1px solid rgba(21, 21, 21, 0.08);
+  outline-offset: -1px;
+}
+
+.project-showcase__thumb img {
+  inset: 4px !important;
+  width: calc(100% - 8px) !important;
+  height: calc(100% - 8px) !important;
+  object-fit: cover;
+  transition:
+    inset 250ms ease,
+    width 250ms ease,
+    height 250ms ease,
+    opacity 250ms ease;
+}
+
+.project-showcase__thumb:not(.is-active) img {
+  opacity: 0.82;
+}
+
+.project-showcase__thumb:hover img {
+  opacity: 1;
+}
+
+.project-showcase__thumb.is-active {
+  box-shadow: inset 0 0 0 2px var(--color-burgundy);
+}
+
+.project-showcase__thumb.is-active img {
+  inset: 6px !important;
+  width: calc(100% - 12px) !important;
+  height: calc(100% - 12px) !important;
+}
+
+.project-showcase__thumb:focus-visible {
+  outline: 2px solid var(--color-burgundy);
+  outline-offset: 3px;
+}
+
+/* Autoplay countdown under the active thumbnail. */
+.project-showcase__progress {
+  position: absolute;
+  right: 0;
+  bottom: -0.5rem;
+  left: 0;
+  height: 2px;
+  background: var(--color-burgundy);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: showcase-progress var(--autoplay-ms) linear forwards;
+  animation-play-state: paused;
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+.project-showcase[data-playing="true"] .project-showcase__progress {
+  animation-play-state: running;
+  opacity: 1;
+}
+
+/* Reveals */
+.project-showcase__summary.is-ready {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition:
+    opacity 800ms ease 150ms,
+    transform 950ms cubic-bezier(0.2, 0.7, 0.2, 1) 150ms;
+}
+
+.project-showcase__summary.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Clip the inner wrapper: a fully clipped observed element never intersects. */
+.project-showcase__stage.is-ready .project-showcase__slides {
+  clip-path: inset(100% 0 0 0);
+}
+
+.project-showcase__stage.is-visible .project-showcase__slides {
+  animation:
+    page-hero-image-grow 1500ms cubic-bezier(0.65, 0, 0.35, 1) both,
+    page-hero-image-settle 2100ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.project-showcase__thumbs.is-ready .project-showcase__thumb {
+  opacity: 0;
+  transform: translateY(0.75rem);
+  transition:
+    opacity 600ms ease var(--thumb-delay, 0ms),
+    transform 750ms cubic-bezier(0.2, 0.7, 0.2, 1) var(--thumb-delay, 0ms),
+    box-shadow 250ms ease;
+}
+
+.project-showcase__thumbs.is-visible .project-showcase__thumb {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes showcase-slide-wipe {
+  from {
+    clip-path: inset(0 0 0 100%);
+  }
+
+  to {
+    clip-path: inset(0);
+  }
+}
+
+@keyframes showcase-slide-settle {
+  from {
+    transform: scale(1.08) translateX(2%);
+  }
+
+  to {
+    transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes showcase-slide-recede {
+  from {
+    transform: scale(1) translateX(0);
+  }
+
+  to {
+    transform: scale(1.04) translateX(-4%);
+  }
+}
+
+@keyframes showcase-progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (max-width: 1024px) {
+  .project-showcase__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .project-showcase__copy {
+    max-width: 44rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .project-showcase {
+    padding-block: 3.5rem 3rem;
+  }
+
+  .project-showcase__inner {
+    gap: 1.75rem;
+  }
+
+  .project-showcase__title {
+    font-size: clamp(1.5rem, 6.5vw, 1.875rem);
+  }
+
+  .project-showcase__summary {
+    margin-top: 1rem;
+  }
+
+  .project-showcase__stage {
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-showcase__thumbs {
+    gap: 0.625rem;
+    margin-top: 1.25rem;
+    margin-inline: calc(var(--page-gutter) * -1);
+    padding-inline: var(--page-gutter);
+    scroll-padding-inline: var(--page-gutter);
+    scroll-snap-type: x mandatory;
+  }
+
+  .project-showcase__thumb {
+    width: 4rem;
+    height: 4rem;
+    scroll-snap-align: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-showcase__slide.is-entering,
+  .project-showcase__slide.is-entering img,
+  .project-showcase__slide.is-previous img {
+    animation: none;
+  }
+}
+
 /* Hide the native play overlay iOS shows when autoplay is blocked. */
 .hero__video::-webkit-media-controls,
 .hero__video::-webkit-media-controls-start-playback-button {
@@ -4879,7 +5211,8 @@ width: 100%;
   .placeholder-page > p:not(.eyebrow),
   .page-hero__summary,
   .about-reveal__copy p,
-  .story-section__closing {
+  .story-section__closing,
+  .project-showcase__summary {
     font-size: 1rem;
     line-height: 1.6;
   }
@@ -4917,6 +5250,7 @@ width: 100%;
   .image-list-section__title,
   .objectives-section__title--heading,
   .service-detail__title,
+  .project-showcase__title,
   .site-footer__column h3,
   .service-item__mobile-title,
   .why-card h3,

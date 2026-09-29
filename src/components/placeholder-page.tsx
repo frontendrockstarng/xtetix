@@ -13,7 +13,7 @@ export function PlaceholderPage({ title, intro }: PlaceholderPageProps) {
       <p className="eyebrow">Xtetix Concepts Ltd</p>
       <ScrollRevealHeading level="h1" lines={[title]} />
       <p>{intro}</p>
-      <Link className="button button--primary" href="/contact">
+      <Link className="button button--primary" href="#contact">
         <RolloverText>Contact us</RolloverText>
       </Link>
     </main>

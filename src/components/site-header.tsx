@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { NavChevron, NavDropdown } from "@/components/nav-dropdown";
+import { ContactLink } from "@/components/contact-link";
+import { NavLink } from "@/components/nav-link";
 import { RolloverText } from "@/components/rollover-text";
 
 const companyLinks = [
@@ -12,7 +14,6 @@ const companyLinks = [
 const links = [
   { href: "/services", label: "Services" },
   { href: "/projects", label: "Projects" },
-  { href: "/gallery", label: "Gallery" },
 ];
 
 export function SiteHeader() {
@@ -46,34 +47,35 @@ export function SiteHeader() {
               </summary>
               <div className="mobile-nav__submenu">
                 {companyLinks.map((link) => (
-                  <Link key={link.href} href={link.href}>
+                  <NavLink key={link.href} href={link.href}>
                     {link.label}
-                  </Link>
+                  </NavLink>
                 ))}
               </div>
             </details>
             {links.map((link) => (
-              <Link key={link.href} href={link.href}>
+              <NavLink key={link.href} href={link.href}>
                 <RolloverText>{link.label}</RolloverText>
-              </Link>
+              </NavLink>
             ))}
-            <Link className="button button--primary site-nav__mobile-cta" href="/contact">
+            <ContactLink className="button button--primary site-nav__mobile-cta">
               <RolloverText>Contact us</RolloverText>
-            </Link>
+            </ContactLink>
           </nav>
         </details>
 
         <nav className="site-nav site-nav--desktop" aria-label="Main navigation">
           <NavDropdown label="Company" items={companyLinks} />
           {links.map((link) => (
-            <Link key={link.href} href={link.href}>
+            <NavLink key={link.href} href={link.href}>
               <RolloverText>{link.label}</RolloverText>
-            </Link>
+            </NavLink>
           ))}
-          <Link className="button button--primary site-nav__cta" href="/contact">
-            <RolloverText>Contact us</RolloverText>
-          </Link>
         </nav>
+
+        <ContactLink className="button button--primary site-nav__cta">
+          <RolloverText>Contact us</RolloverText>
+        </ContactLink>
       </div>
     </header>
   );

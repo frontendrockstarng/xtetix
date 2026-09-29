@@ -1,7 +1,8 @@
 {
-  "/[slug]/page": "app/[slug]/page.js",
-  "/about-us/page": "app/about-us/page.js",
-  "/hseq-policy/page": "app/hseq-policy/page.js",
-  "/local-content/page": "app/local-content/page.js",
-  "/services/page": "app/services/page.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/icon.png/route": "app/icon.png/route.js",
+  "/services/page": "app/services/page.js",
+  "/page": "app/page.js",
+  "/projects/page": "app/projects/page.js",
+  "/[slug]/page": "app/[slug]/page.js"
 }

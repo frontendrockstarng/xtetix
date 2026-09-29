@@ -39,7 +39,7 @@ export default function HseqPolicyPage() {
       <StatementCta
         label="Our HSEQ goal"
         statement="Through leadership commitment, operational discipline, and continuous improvement, we remain dedicated to achieving incident-free operations while delivering safe, reliable, and quality-driven solutions to our clients."
-        cta={{ label: "Contact us", href: "/contact" }}
+        cta={{ label: "Contact us", href: "#contact" }}
       />
 
       <ObjectivesSection
