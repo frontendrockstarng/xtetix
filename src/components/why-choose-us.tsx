@@ -95,7 +95,7 @@ export function WhyChooseUs() {
               className={`why-card${index === reasons.length - 1 ? " why-card--wide" : ""}`}
               data-why-reveal
               key={reason.title}
-              style={{ "--card-delay": `${index * 120}ms` } as CSSProperties}
+              style={{ "--card-delay": `${index * 70}ms` } as CSSProperties}
             >
               <CardEdges />
               <span className="why-card__index" aria-hidden="true">

@@ -10,7 +10,7 @@ const services = [
   {
     title: "Civil construction & infrastructure",
     image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85",
+      "https://res.cloudinary.com/colt-copy/image/upload/v1790709543/constructionservice_je5jnh.jpg",
     alt: "Modern city buildings representing civil construction and infrastructure",
     description:
       "Our expertise covers site preparation, earthworks, infrastructure development, temporary accommodation solutions, foundation works and facility construction support services. Leveraging experienced personnel, modern equipment and industry best practices, we execute projects safely, efficiently and in accordance with client specifications and regulatory requirements.",
@@ -18,7 +18,7 @@ const services = [
   {
     title: "Facility Management",
     image:
-      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=85",
+      "https://res.cloudinary.com/colt-copy/image/upload/v1790709719/facility_management_axts9v.webp",
     alt: "A facilities professional maintaining a commercial space",
     description:
       "Our services encompass preventive maintenance, industrial cleaning, janitorial services, fumigation, specialized equipment maintenance and infrastructure upkeep for commercial, industrial, marine and oil and gas facilities.",
@@ -26,7 +26,7 @@ const services = [
   {
     title: "Procurement & supply chain solutions",
     image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=85",
+      "https://res.cloudinary.com/colt-copy/image/upload/v1790710047/procurementimage_pehcaw.webp",
     alt: "Organized goods in a distribution warehouse",
     description:
       "Through our network of global manufacturers, OEMs, suppliers, stockists and logistics partners, we offer reliable sourcing solutions that support construction, maintenance, drilling, marine and production operations. Our procurement services focus on cost optimization, supply chain efficiency, vendor reliability and quality assurance.",
@@ -34,7 +34,7 @@ const services = [
   {
     title: "Marine logistics & offshore support",
     image:
-      "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1600&q=85",
+      "https://res.cloudinary.com/colt-copy/image/upload/v1790710161/IMG_7716_gmurud.png",
     alt: "Container vessel transporting cargo across the water",
     description:
       "Our services support exploration, production, construction, maintenance and marine transportation activities across offshore and coastal environments. Working with marine partners, vessel operators and logistics providers, we deliver dependable support that helps optimize operations, maintain project schedules and improve supply chain performance.",
@@ -42,7 +42,7 @@ const services = [
   {
     title: "Pipeline & flowline services",
     image:
-      "https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=1600&q=85",
+      "https://res.cloudinary.com/colt-copy/image/upload/v1790710566/14947_1_c2bbvr.jpg",
     alt: "Industrial pipeline infrastructure at an energy facility",
     description:
       "We support operators through the planning, preparation, installation, maintenance, repair and integrity management of pipeline systems and associated infrastructure. Our approach combines engineering expertise, strict quality control and strong HSE compliance to help ensure safe, reliable and efficient operations.",

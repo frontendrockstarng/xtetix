@@ -70,7 +70,7 @@ function AboutMetrics() {
         <div
           className="about-story__metric"
           key={metric.label}
-          style={{ "--metric-delay": `${index * 120}ms` } as React.CSSProperties}
+          style={{ "--metric-delay": `${index * 70}ms` } as React.CSSProperties}
         >
           <dt className="about-story__metric-label">{metric.label}</dt>
           <dd className="about-story__metric-value" aria-label={`${metric.value}${metric.suffix}`}>

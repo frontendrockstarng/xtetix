@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/projects":{},"/gallery":{},"/contact":{}},"dynamicRoutes":{"/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/[slug]","routeRegex":"^\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"12cd82a8fa6ffe44f122530f54b0249d","previewModeSigningKey":"c18592e29fc5164e9f99a48965d53b0119bb3b6bb2bb757724c13755bac7b9f2","previewModeEncryptionKey":"c539632361d23740283722e5df157de5fe0a1d39fc312f0ff218001e7c99bcce"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "b5711b27ceb219d2b7e8f2993328b00b",
+    "previewModeSigningKey": "4353592685e81d6f0625e26952ae31e94a0bcb6d38795c9fea32a4ca72fbfd43",
+    "previewModeEncryptionKey": "b3914d4bfe4bb86c1d4d7cc62302b49fc11f5131b66c344f16a0fcdaab0669f3"
+  }
+}

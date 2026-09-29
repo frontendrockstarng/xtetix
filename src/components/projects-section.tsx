@@ -14,16 +14,16 @@ const projects = [
       "Provision, installation and deployment of modular accommodation facilities to support field personnel and operational requirements. The project was executed in compliance with applicable safety, quality and operational standards.",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=85",
-        alt: "Timber framing at an active construction project",
+        src: "https://res.cloudinary.com/colt-copy/image/upload/v1790711048/eroton-1_w3xpo6.jpg",
+        alt: "Eroton exploration & production FLB temporary accommodation project (Akaso/Alakiri Field)",
       },
       {
-        src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1800&q=85",
-        alt: "Construction site with workers and equipment",
+        src: "https://res.cloudinary.com/colt-copy/image/upload/v1790711221/eroton-2_s9zvld.jpg",
+        alt: "Eroton exploration & production FLB temporary accommodation by xtetix concept",
       },
       {
-        src: "https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?auto=format&fit=crop&w=1800&q=85",
-        alt: "Building work underway on a large project",
+        src: "https://res.cloudinary.com/colt-copy/image/upload/v1790711394/eroton-3_lvewsg.jpg",
+        alt: "Eroton FLB project by Xtetix concept ltd.",
       },
     ],
   },
@@ -33,16 +33,16 @@ const projects = [
       "Project successfully executed civil and infrastructure rehabilitation works to support ongoing field operations and improve facility functionality.",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=85",
-        alt: "Glass and steel commercial building",
+        src: "/assets/projects/antan-1.jpg",
+        alt: "ANTAN field revamp by Xtetix concept limited",
       },
       {
-        src: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1400&q=85",
-        alt: "Contemporary building exterior",
+        src: "/assets/projects/antan-2.jpg",
+        alt: "ANTAN field revamp by Xtetix concept limited",
       },
       {
-        src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85",
-        alt: "Completed modern building interior",
+        src: "/assets/projects/antan-3.jpg",
+        alt: "ANTAN field revamp by Xtetix concept limited",
       },
     ],
   },
@@ -52,16 +52,16 @@ const projects = [
       "Participated in the execution of infrastructure development works supporting the construction of critical healthcare facilities aimed at improving community healthcare capacity.",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=1400&q=85",
-        alt: "Modern hospital building and healthcare facility",
+        src: "/assets/projects/seplat-1.jpg",
+        alt: "Seplat energy / horatio project by xtetix concept limited",
       },
       {
-        src: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=85",
-        alt: "Bright hospital corridor",
+        src: "/assets/projects/seplat-2.jpg",
+        alt: "Seplat energy / horatio project by xtetix concept limited",
       },
       {
-        src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=85",
-        alt: "Healthcare professionals in a clinical environment",
+        src: "/assets/projects/seplat-3.jpg",
+        alt: "Seplat energy / horatio project by xtetix concept limited",
       },
     ],
   },
@@ -150,7 +150,7 @@ export function ProjectsSection() {
               className={`project-card${index === 0 ? " project-card--featured" : ""}`}
               data-project-reveal
               key={project.title}
-              style={{ "--project-delay": `${index * 120}ms` } as React.CSSProperties}
+              style={{ "--project-delay": `${index * 70}ms` } as React.CSSProperties}
             >
               <div className="project-card__media">
                 <Image

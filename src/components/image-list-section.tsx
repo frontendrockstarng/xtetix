@@ -84,14 +84,14 @@ export function ImageListSection({ id, title, summary, image, items }: ImageList
           <div
             className="image-list-section__card"
             data-list-reveal
-            style={{ "--card-delay": "200ms" } as CSSProperties}
+            style={{ "--card-delay": "120ms" } as CSSProperties}
           >
             <CardEdges />
             <ul>
               {items.map((item, index) => (
                 <li
                   key={item}
-                  style={{ "--item-delay": `${300 + index * 80}ms` } as CSSProperties}
+                  style={{ "--item-delay": `${180 + index * 50}ms` } as CSSProperties}
                 >
                   {item}
                 </li>

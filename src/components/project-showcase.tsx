@@ -194,7 +194,7 @@ export function ProjectShowcase({ id, title, summary, images, tone = "light" }: 
                   onClick={() => goTo(index)}
                   aria-label={`Show image ${index + 1} of ${count}: ${image.alt}`}
                   aria-pressed={index === active}
-                  style={{ "--thumb-delay": `${450 + index * 70}ms` } as CSSProperties}
+                  style={{ "--thumb-delay": `${270 + index * 40}ms` } as CSSProperties}
                 >
                   <Image src={image.src} alt="" fill sizes="80px" />
                   {index === active && (

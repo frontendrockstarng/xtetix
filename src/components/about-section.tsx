@@ -49,7 +49,7 @@ function CountUpMetric({
 
         delayId = window.setTimeout(() => {
           frameId = requestAnimationFrame(animate);
-        }, 180);
+        }, 110);
       },
       { threshold: 0.35, rootMargin: "0px 0px -12% 0px" },
     );
@@ -89,7 +89,7 @@ export function AboutSection() {
           if (!entry.isIntersecting) return;
           const target = entry.target as HTMLElement;
           observer.unobserve(target);
-          window.setTimeout(() => target.classList.add("is-visible"), 120);
+          window.setTimeout(() => target.classList.add("is-visible"), 70);
         });
       },
       { threshold: 0, rootMargin: "0px" },

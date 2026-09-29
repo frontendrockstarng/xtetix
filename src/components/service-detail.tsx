@@ -79,7 +79,7 @@ export function ServiceDetail({ id, title, summary, image, offerings, tone = "li
           <h3>Service offerings</h3>
           <ul>
             {offerings.map((offering, index) => (
-              <li key={offering} style={{ "--item-delay": `${index * 60}ms` } as CSSProperties}>
+              <li key={offering} style={{ "--item-delay": `${index * 40}ms` } as CSSProperties}>
                 {offering}
               </li>
             ))}

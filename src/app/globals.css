@@ -119,8 +119,8 @@ width: 100%;
 
 .contact-invite.is-ready .contact-invite__button {
   transition:
-    opacity 750ms ease 220ms,
-    transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1) 220ms;
+    opacity 750ms ease 130ms,
+    transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1) 130ms;
 }
 
 .contact-invite.is-visible .contact-invite__button {
@@ -497,7 +497,9 @@ width: 100%;
 .hero {
   position: relative;
   display: flex;
-  min-height: min(760px, calc(100svh - 76px));
+  /* Header + hero fill exactly one screen, however tall the display. */
+  min-height: calc(100vh - 76px);
+  min-height: calc(100svh - 76px);
   align-items: flex-end;
   overflow: hidden;
   background: #45494a;
@@ -567,11 +569,11 @@ width: 100%;
 }
 
 .hero h1 .hero__line:nth-child(1) > span {
-  animation-delay: 120ms;
+  animation-delay: 70ms;
 }
 
 .hero h1 .hero__line:nth-child(2) > span {
-  animation-delay: 300ms;
+  animation-delay: 180ms;
 }
 
 .hero__summary {
@@ -584,21 +586,30 @@ width: 100%;
 }
 
 .hero__summary .hero__line:nth-child(1) > span {
-  animation-delay: 500ms;
+  animation-delay: 300ms;
 }
 
 .hero__summary .hero__line:nth-child(2) > span {
-  animation-delay: 650ms;
+  animation-delay: 390ms;
 }
 
 .hero__summary .hero__line:nth-child(3) > span {
-  animation-delay: 800ms;
+  animation-delay: 480ms;
 }
 
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+}
+
+/* Buttons rise in just after the summary lines ("backwards" keeps hover styles free). */
+.hero__actions > * {
+  animation: page-hero-fade-up 800ms cubic-bezier(0.2, 0.7, 0.2, 1) 580ms backwards;
+}
+
+.hero__actions > :nth-child(2) {
+  animation-delay: 660ms;
 }
 
 .hero__scroll {
@@ -735,8 +746,8 @@ width: 100%;
 
 .services-section__sticky.is-ready .services-section__intro {
   transition:
-    opacity 600ms ease 100ms,
-    transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1) 100ms;
+    opacity 600ms ease 60ms,
+    transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1) 60ms;
 }
 
 .services-section__sticky.is-visible .services-section__intro {
@@ -804,19 +815,19 @@ width: 100%;
 }
 
 .services-section__sticky.is-visible li:nth-child(2) .services-index__button {
-  transition-delay: 90ms;
+  transition-delay: 50ms;
 }
 
 .services-section__sticky.is-visible li:nth-child(3) .services-index__button {
-  transition-delay: 180ms;
+  transition-delay: 110ms;
 }
 
 .services-section__sticky.is-visible li:nth-child(4) .services-index__button {
-  transition-delay: 270ms;
+  transition-delay: 160ms;
 }
 
 .services-section__sticky.is-visible li:nth-child(5) .services-index__button {
-  transition-delay: 360ms;
+  transition-delay: 220ms;
 }
 
 .services-index__button.is-active .services-index__title {
@@ -895,14 +906,14 @@ width: 100%;
 
 .service-item.is-ready .service-item__description {
   transition:
-    opacity 650ms ease 160ms,
-    transform 750ms cubic-bezier(0.2, 0.7, 0.2, 1) 160ms;
+    opacity 650ms ease 100ms,
+    transform 750ms cubic-bezier(0.2, 0.7, 0.2, 1) 100ms;
 }
 
 .service-item.is-ready .service-item__link {
   transition:
-    opacity 650ms ease 260ms,
-    transform 750ms cubic-bezier(0.2, 0.7, 0.2, 1) 260ms;
+    opacity 650ms ease 160ms,
+    transform 750ms cubic-bezier(0.2, 0.7, 0.2, 1) 160ms;
 }
 
 .service-item.is-visible .service-item__description,
@@ -965,8 +976,8 @@ width: 100%;
 
 .why-choose__subheading.is-ready {
   transition:
-    clip-path 850ms cubic-bezier(0.2, 0.7, 0.2, 1) 160ms,
-    transform 850ms cubic-bezier(0.2, 0.7, 0.2, 1) 160ms;
+    clip-path 850ms cubic-bezier(0.2, 0.7, 0.2, 1) 100ms,
+    transform 850ms cubic-bezier(0.2, 0.7, 0.2, 1) 100ms;
 }
 
 .why-choose__subheading.is-visible {
@@ -1061,17 +1072,17 @@ width: 100%;
 }
 
 .is-visible > .card-edge--right {
-  --edge-delay: calc(var(--card-delay) + 110ms);
+  --edge-delay: calc(var(--card-delay) + 70ms);
   transform: scaleY(1);
 }
 
 .is-visible > .card-edge--bottom {
-  --edge-delay: calc(var(--card-delay) + 220ms);
+  --edge-delay: calc(var(--card-delay) + 130ms);
   transform: scaleX(1);
 }
 
 .is-visible > .card-edge--left {
-  --edge-delay: calc(var(--card-delay) + 330ms);
+  --edge-delay: calc(var(--card-delay) + 200ms);
   transform: scaleY(1);
 }
 
@@ -1148,8 +1159,8 @@ width: 100%;
 
 .projects-section__heading > p.is-ready {
   transition:
-    clip-path 850ms cubic-bezier(0.2, 0.7, 0.2, 1) 140ms,
-    transform 850ms cubic-bezier(0.2, 0.7, 0.2, 1) 140ms;
+    clip-path 850ms cubic-bezier(0.2, 0.7, 0.2, 1) 80ms,
+    transform 850ms cubic-bezier(0.2, 0.7, 0.2, 1) 80ms;
 }
 
 .projects-section__heading > p.is-visible {
@@ -1416,11 +1427,11 @@ width: 100%;
 }
 
 .scroll-heading.is-visible .scroll-heading__line:nth-child(2) > span {
-  transition-delay: 140ms;
+  transition-delay: 80ms;
 }
 
 .scroll-heading.is-visible .scroll-heading__line:nth-child(3) > span {
-  transition-delay: 280ms;
+  transition-delay: 170ms;
 }
 
 .about-section {
@@ -1518,8 +1529,8 @@ width: 100%;
   clip-path: inset(0 0 100% 0);
   transform: translateY(1rem);
   transition:
-    clip-path 900ms cubic-bezier(0.2, 0.7, 0.2, 1) 180ms,
-    transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1) 180ms;
+    clip-path 900ms cubic-bezier(0.2, 0.7, 0.2, 1) 110ms,
+    transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1) 110ms;
 }
 
 [data-about-reveal].is-visible.about-section__description,
@@ -1554,8 +1565,8 @@ width: 100%;
   opacity: 0;
   transform: translateY(0.6rem);
   transition:
-    opacity 600ms ease 260ms,
-    transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1) 260ms;
+    opacity 600ms ease 160ms,
+    transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1) 160ms;
 }
 
 [data-about-reveal].is-visible.about-section__cta {
@@ -1797,8 +1808,10 @@ width: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero__line > span {
-    animation: none;
+  .hero__line > span,
+  .hero__actions > *,
+  .capability-section__cta {
+    animation: none !important;
   }
 }
 
@@ -2010,7 +2023,8 @@ width: 100%;
   }
 
   .hero {
-    min-height: min(720px, calc(100svh - 68px));
+    min-height: calc(100vh - 68px);
+    min-height: calc(100svh - 68px);
     align-items: flex-end;
   }
 
@@ -3272,8 +3286,8 @@ width: 100%;
 
 .safety-assurance__copy.is-ready {
   transition:
-    clip-path 1050ms cubic-bezier(0.2, 0.7, 0.2, 1) 180ms,
-    transform 1050ms cubic-bezier(0.2, 0.7, 0.2, 1) 180ms;
+    clip-path 1050ms cubic-bezier(0.2, 0.7, 0.2, 1) 110ms,
+    transform 1050ms cubic-bezier(0.2, 0.7, 0.2, 1) 110ms;
 }
 
 .safety-assurance__copy.is-visible {
@@ -3292,8 +3306,8 @@ width: 100%;
 
 .safety-assurance__cta.is-ready {
   transition:
-    opacity 700ms ease 320ms,
-    transform 800ms cubic-bezier(0.2, 0.7, 0.2, 1) 320ms;
+    opacity 700ms ease 190ms,
+    transform 800ms cubic-bezier(0.2, 0.7, 0.2, 1) 190ms;
 }
 
 .safety-assurance__cta.is-visible {
@@ -3428,25 +3442,31 @@ width: 100%;
 
 .capability-section.is-ready:not(.is-visible) .capability-section__lead,
 .capability-section.is-ready:not(.is-visible) .capability-slider,
-.capability-section.is-ready:not(.is-visible) .capability-section__content {
+.capability-section.is-ready:not(.is-visible) .capability-section__description,
+.capability-section.is-ready:not(.is-visible) .capability-section__cta {
   opacity: 0;
   transform: translateY(1rem);
 }
 
 .capability-section.is-ready .capability-section__lead,
 .capability-section.is-ready .capability-slider,
-.capability-section.is-ready .capability-section__content {
+.capability-section.is-ready .capability-section__description {
   transition:
     opacity 850ms ease,
     transform 950ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .capability-section.is-visible .capability-slider {
-  transition-delay: 120ms;
+  transition-delay: 70ms;
 }
 
-.capability-section.is-visible .capability-section__content {
-  transition-delay: 240ms;
+.capability-section.is-visible .capability-section__description {
+  transition-delay: 140ms;
+}
+
+/* An animation (not a transition) so the button's quick hover lift is untouched. */
+.capability-section.is-visible .capability-section__cta {
+  animation: page-hero-fade-up 850ms cubic-bezier(0.2, 0.7, 0.2, 1) 220ms backwards;
 }
 
 .capability-section__lead-title {
@@ -3759,11 +3779,11 @@ width: 100%;
 }
 
 .page-hero__line:nth-child(1) > span {
-  animation-delay: 100ms;
+  animation-delay: 60ms;
 }
 
 .page-hero__line:nth-child(2) > span {
-  animation-delay: 240ms;
+  animation-delay: 140ms;
 }
 
 /* Load reveal: the image grows upward from its bottom edge. Lives on an inner
@@ -4086,7 +4106,7 @@ width: 100%;
 }
 
 .about-story__metrics.is-ready .about-story__metric-label {
-  transition-delay: calc(var(--metric-delay) + 220ms);
+  transition-delay: calc(var(--metric-delay) + 130ms);
 }
 
 .about-story__metrics.is-visible .about-story__metric-value,
@@ -4135,8 +4155,8 @@ width: 100%;
   opacity: 0;
   transform: translateY(1.25rem);
   transition:
-    opacity 800ms ease 250ms,
-    transform 950ms cubic-bezier(0.2, 0.7, 0.2, 1) 250ms;
+    opacity 800ms ease 150ms,
+    transform 950ms cubic-bezier(0.2, 0.7, 0.2, 1) 150ms;
 }
 
 .story-section__closing.is-visible {
@@ -4200,8 +4220,8 @@ width: 100%;
   opacity: 0;
   transform: translateY(0.8rem);
   transition:
-    opacity 700ms ease 200ms,
-    transform 850ms cubic-bezier(0.2, 0.7, 0.2, 1) 200ms,
+    opacity 700ms ease 120ms,
+    transform 850ms cubic-bezier(0.2, 0.7, 0.2, 1) 120ms,
     background-color 180ms ease;
 }
 
@@ -4276,7 +4296,7 @@ width: 100%;
 }
 
 .objectives-section.is-ready .objectives-slider {
-  transition-delay: 150ms;
+  transition-delay: 90ms;
 }
 
 .objectives-section.is-visible .objectives-section__title,
@@ -4449,8 +4469,8 @@ width: 100%;
 
 .commitment-cards__summary.is-ready {
   transition:
-    opacity 800ms ease 150ms,
-    transform 950ms cubic-bezier(0.2, 0.7, 0.2, 1) 150ms;
+    opacity 800ms ease 90ms,
+    transform 950ms cubic-bezier(0.2, 0.7, 0.2, 1) 90ms;
 }
 
 @media (min-width: 761px) and (max-width: 1024px) {
@@ -4597,8 +4617,8 @@ width: 100%;
   opacity: 0;
   transform: translateY(1rem);
   transition:
-    opacity 800ms ease 150ms,
-    transform 950ms cubic-bezier(0.2, 0.7, 0.2, 1) 150ms;
+    opacity 800ms ease 90ms,
+    transform 950ms cubic-bezier(0.2, 0.7, 0.2, 1) 90ms;
 }
 
 .image-list-section__summary.is-visible {
@@ -4827,8 +4847,8 @@ width: 100%;
   opacity: 0;
   transform: translateY(1rem);
   transition:
-    opacity 800ms ease 150ms,
-    transform 950ms cubic-bezier(0.2, 0.7, 0.2, 1) 150ms;
+    opacity 800ms ease 90ms,
+    transform 950ms cubic-bezier(0.2, 0.7, 0.2, 1) 90ms;
 }
 
 .service-detail__summary.is-visible {
@@ -5060,8 +5080,8 @@ width: 100%;
   opacity: 0;
   transform: translateY(1rem);
   transition:
-    opacity 800ms ease 150ms,
-    transform 950ms cubic-bezier(0.2, 0.7, 0.2, 1) 150ms;
+    opacity 800ms ease 90ms,
+    transform 950ms cubic-bezier(0.2, 0.7, 0.2, 1) 90ms;
 }
 
 .project-showcase__summary.is-visible {

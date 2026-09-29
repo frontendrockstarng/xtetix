@@ -85,7 +85,7 @@ export function CommitmentCards({
           <div
             className="commitment-card"
             key={points[0]}
-            style={{ "--card-delay": `${index * 90}ms` } as CSSProperties}
+            style={{ "--card-delay": `${index * 50}ms` } as CSSProperties}
           >
             <CardEdges />
             <ul>

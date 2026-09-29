@@ -30,11 +30,11 @@ export function ScrollRevealHeading({
         if (entry.isIntersecting) {
           revealDelay = window.setTimeout(() => {
             heading.classList.add("is-visible");
-          }, 140);
+          }, 60);
           observer.unobserve(heading);
         }
       },
-      { threshold: 0.3, rootMargin: "0px 0px -12% 0px" },
+      { threshold: 0.2, rootMargin: "0px 0px -6% 0px" },
     );
 
     heading.classList.add("is-ready");
