@@ -9,19 +9,33 @@ type CommitmentCardsProps = {
   id: string;
   title: string;
   image: { src: string; alt: string };
-  /** Four groups of bullet points, one per card. */
+  /** Groups of bullet points, one per card (4 for "staggered", 3 for "split"). */
   groups: string[][];
+  /** Intro paragraph; shown bottom-left in the "split" layout. */
+  summary?: string;
+  /**
+   * "staggered": title + card top, three cards along the bottom.
+   * "split": title + two cards across the top, summary + one card at the bottom.
+   */
+  layout?: "staggered" | "split";
 };
 
-/** Dark photo band with a staggered grid of bordered bullet-point cards. */
-export function CommitmentCards({ id, title, image, groups }: CommitmentCardsProps) {
+/** Dark photo band with a grid of bordered bullet-point cards. */
+export function CommitmentCards({
+  id,
+  title,
+  image,
+  groups,
+  summary,
+  layout = "staggered",
+}: CommitmentCardsProps) {
   const gridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const grid = gridRef.current;
     if (!grid) return;
 
-    const cards = grid.querySelectorAll<HTMLElement>(".commitment-card");
+    const cards = grid.querySelectorAll<HTMLElement>(".commitment-card, .commitment-cards__summary");
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       cards.forEach((card) => card.classList.add("is-visible"));
       return;
@@ -56,13 +70,17 @@ export function CommitmentCards({ id, title, image, groups }: CommitmentCardsPro
       />
       <div className="commitment-cards__overlay" aria-hidden="true" />
 
-      <div className="commitment-cards__grid page-width" ref={gridRef}>
+      <div
+        className={`commitment-cards__grid commitment-cards__grid--${layout} page-width`}
+        ref={gridRef}
+      >
         <ScrollRevealHeading
           id={id}
           level="h2"
           className="commitment-cards__title"
           lines={[title]}
         />
+        {summary ? <p className="commitment-cards__summary">{summary}</p> : null}
         {groups.map((points, index) => (
           <div
             className="commitment-card"

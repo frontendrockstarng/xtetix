@@ -2,10 +2,6 @@ import { notFound } from "next/navigation";
 import { PlaceholderPage } from "@/components/placeholder-page";
 
 const pages: Record<string, { title: string; intro: string }> = {
-  services: {
-    title: "Services",
-    intro: "Integrated services for complex projects and operational environments.",
-  },
   projects: {
     title: "Projects",
     intro: "Proven experience. Practical delivery.",
