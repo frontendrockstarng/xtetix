@@ -55,11 +55,11 @@ export function SiteFooter() {
               <RolloverText>090909930358</RolloverText>
             </a>
             <p>
-              No. 3A Kafayat Abdulrazaq street,
+              CROMWELL TERRACE 2 (UNIT A2)
               <br />
-              off Fola Osibo Street, Lekki Phase 1.
+              NO 13 & 14, Onigefon Street,
               <br />
-              Lagos Island, Lagos,
+              Oniru Eti-osa, Lagos
               <br />
               Nigeria.
             </p>

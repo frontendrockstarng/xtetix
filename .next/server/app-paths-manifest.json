@@ -1,8 +1,7 @@
 {
   "/hseq-policy/page": "app/hseq-policy/page.js",
-  "/about-us/page": "app/about-us/page.js",
-  "/local-content/page": "app/local-content/page.js",
-  "/services/page": "app/services/page.js",
   "/projects/page": "app/projects/page.js",
+  "/services/page": "app/services/page.js",
+  "/local-content/page": "app/local-content/page.js",
   "/page": "app/page.js"
 }
