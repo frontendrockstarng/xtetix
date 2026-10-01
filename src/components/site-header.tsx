@@ -23,7 +23,7 @@ export function SiteHeader() {
         <Link className="brand" href="/" aria-label="Xtetix Concepts home">
           <Image
             className="brand__mark"
-            src="/assets/logo.png"
+            src="/assets/logoX.png"
             alt=""
             width={52}
             height={52}
