@@ -39,7 +39,6 @@ export default function LocalContentPage() {
       <StatementCta
         label="Investing in Nigerian professionals"
         statement="Through strategic partnerships and continuous investment in human capital, we actively support the development of competent Nigerian professionals capable of delivering world-class services across our areas of operation."
-        cta={{ label: "Contact us", href: "#contact" }}
       />
 
       <ObjectivesSection

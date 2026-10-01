@@ -1,4 +1,9 @@
 {
-  "/projects/page": "app/projects/page.js",
-  "/page": "app/page.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
+  "/hseq-policy/page": "app/hseq-policy/page.js",
+  "/about-us/page": "app/about-us/page.js",
+  "/local-content/page": "app/local-content/page.js",
+  "/services/page": "app/services/page.js",
+  "/projects/page": "app/projects/page.js"
 }
